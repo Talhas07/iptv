@@ -1,6 +1,4 @@
 import UserModel from "../models/user.js";
-import passwordHash from "password-hash";
-import jwt from "jsonwebtoken";
 
 const UserService = {
   getAll: async () => {

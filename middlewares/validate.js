@@ -1,6 +1,5 @@
 
 import Joi from 'joi'
-import pick from '../utils/pick.js'
 
 const validate = (schema) => (req, res, next) => {
     const validSchema = pick(schema, ['params', 'query', 'body']);
@@ -18,3 +17,13 @@ const validate = (schema) => (req, res, next) => {
 };
 
 export default validate;
+
+const pick = (object, keys) => {
+    return keys.reduce((obj, key) => {
+        if (object && Object.prototype.hasOwnProperty.call(object, key)) {
+            // eslint-disable-next-line no-param-reassign
+            obj[key] = object[key]
+        }
+        return obj
+    }, {})
+}
