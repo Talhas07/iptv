@@ -132,10 +132,10 @@ export default {
       data,
     });
   },
-  INTERNAL_SERVER: (res, data = {}, message = ErrorCodesMeta.INTERNAL_SERVER_ERROR.message) => {
-    res.status(403).json({
+  INTERNAL_SERVER_ERROR: (res, data = {}, message = ErrorCodesMeta.INTERNAL_SERVER_ERROR.message) => {
+    res.status(500).json({
       meta: {
-        status: 409,
+        status: 500,
         response: "Internal Server Error",
         message,
       },

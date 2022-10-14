@@ -1,8 +1,9 @@
 import jwt from "jsonwebtoken";
+import httpResponse from "../utils/httpResponse.js";
 
 export default (req, res, next) => {
     const token = req.header("authorization");
-    if (!token) return res.status(401).send("Access denied. No token provided.");
+    if (!token) return httpResponse.BAD_REQUEST(res, "Need token (JWT) to hit this API", "Access denied. No token provided.");
 
     const bearerToken = token.split(" ")[1];
 
@@ -11,6 +12,6 @@ export default (req, res, next) => {
         req.user = decoded;
         next();
     } catch (ex) {
-        res.status(400).send("Invalid token.");
+        httpResponse.UNAUTHORIZED(res, "Token is not valid", "Invalid token.")
     }
 }

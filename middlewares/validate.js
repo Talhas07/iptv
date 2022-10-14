@@ -1,5 +1,6 @@
 
 import Joi from 'joi'
+import httpResponse from '../utils/httpResponse.js';
 
 const validate = (schema) => (req, res, next) => {
     const validSchema = pick(schema, ['params', 'query', 'body']);
@@ -10,7 +11,7 @@ const validate = (schema) => (req, res, next) => {
 
     if (error) {
         const errorMessage = error.details.map((details) => details.message).join(', ');
-        return res.status(401).json((errorMessage));
+        return httpResponse.BAD_REQUEST(res, errorMessage);
     }
     Object.assign(req, value);
     return next();
@@ -21,7 +22,6 @@ export default validate;
 const pick = (object, keys) => {
     return keys.reduce((obj, key) => {
         if (object && Object.prototype.hasOwnProperty.call(object, key)) {
-            // eslint-disable-next-line no-param-reassign
             obj[key] = object[key]
         }
         return obj

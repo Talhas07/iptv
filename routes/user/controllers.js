@@ -18,7 +18,7 @@ const controller = {
     } else if (addResponse.message === "failed") {
       return httpResponse.CONFLICT(res, addResponse.data);
     } else {
-      return httpResponse.INTERNAL_SERVER(res, addResponse.data);
+      return httpResponse.INTERNAL_SERVER_ERROR(res, addResponse.data);
     }
   },
 }
