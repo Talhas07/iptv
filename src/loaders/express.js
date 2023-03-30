@@ -2,7 +2,7 @@ import express from "src/loaders/express.js"
 import cors from "cors"
 import helmet from "helmet"
 import bodyParser from "body-parser"
-import authenticate from "../middlewares/authenticate.js"
+import authenticate from "../middleware/authenticate.js"
 
 import { protectedRouter, unProtectedRouter } from "../routes/index.js"
 
