@@ -1,4 +1,4 @@
-import express from "express"
+import express from "src/loaders/express.js"
 import cors from "cors"
 import helmet from "helmet"
 import bodyParser from "body-parser"

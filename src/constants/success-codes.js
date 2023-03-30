@@ -2,7 +2,7 @@ const SuccessCodes = {
   SUCCESS: "SUCCESS",
   CREATED: "CREATED",
   ACCEPTED: "ACCEPTED",
-  NON_AUTHORATIVE: "NON_AUTHORATIVE",
+  NON_AUTHORITATIVE: "NON_AUTHORITATIVE",
   NO_CONTENT: "NO_CONTENT",
   NOT_MODIFIED: "NOT_MODIFIED",
 };
@@ -20,8 +20,8 @@ export const SuccessCodesMeta = {
     code: SuccessCodes.ACCEPTED,
     message: "Accepted",
   },
-  NON_AUTHORATIVE: {
-    code: SuccessCodes.NON_AUTHORATIVE,
+  NON_AUTHORITATIVE: {
+    code: SuccessCodes.NON_AUTHORITATIVE,
     message: "Non-Authoritative Information",
   },
   NO_CONTENT: {

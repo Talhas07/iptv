@@ -32,7 +32,7 @@ export default {
       data,
     });
   },
-  NON_AUTHORATIVE: (res, data = {}, message = SuccessCodesMeta.NON_AUTHORATIVE.message) => {
+  NON_AUTHORITATIVE: (res, data = {}, message = SuccessCodesMeta.NON_AUTHORITATIVE.message) => {
     res.status(203).json({
       meta: {
         status: 203,

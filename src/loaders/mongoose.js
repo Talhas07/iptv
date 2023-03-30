@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose from "src/loaders/mongoose.js"
 import config from "../config/index.js"
 
 export default async function mongooseLoader() {

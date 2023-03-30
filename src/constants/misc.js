@@ -9,13 +9,13 @@ export const Status = {
 
 export const Action = {
   DEFAULT: "default",
-  FAVORITE_PROJECTS: "favourite-projects",
+  FAVORITE_PROJECTS: "favorite-projects",
   CRITERIA: "all_criteria",
   TEXT_TO_SEARCH: "text-to-search",
   SORT_BY_ATTRIBUTE: "sort-by-attribute",
 };
 
 export const Filter = {
-  FAVOURITE_PROJECTS_SORT: "favourite-projects-sort",
+  FAVORITE_PROJECTS_SORT: "favorite-projects-sort",
   ALL_PROJECTS: "all-projects",
 };
