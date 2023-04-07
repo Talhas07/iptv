@@ -1,1 +1,1 @@
-export { default as authValidation } from "./user.validation.js"
+export * from "./user.validation.js";

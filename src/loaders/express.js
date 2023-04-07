@@ -1,20 +1,16 @@
-import express from "src/loaders/express.js"
-import cors from "cors"
-import helmet from "helmet"
-import bodyParser from "body-parser"
-import authenticate from "../middleware/authenticate.js"
-
-import { protectedRouter, unProtectedRouter } from "../routes/index.js"
+import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import { authenticate } from "../middleware/index.js";
+import { protectedRouter, unProtectedRouter } from "../routes/index.js";
 
 export default async function expressLoader({ app }) {
-  app.use(cors())
-  app.use(helmet())
+	app.use(cors());
+	app.use(helmet());
 
-  app.use(express.json())
-  app.use(bodyParser.json())
+	app.use(express.json());
+	app.use(express.urlencoded());
 
-  app.use("/api", authenticate)
-
-  app.use("/api", protectedRouter)
-  app.use("/", unProtectedRouter)
+	app.use("/", authenticate, protectedRouter);
+	app.use("/", unProtectedRouter);
 }
