@@ -1,0 +1,27 @@
+version: '1.0'
+services:
+  mongo:
+    container_name: mongodb
+    restart: always
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    expose:
+      - 27017
+    volumes:
+      - ./mongo:/data/db
+
+  backend:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ./src:/app/src
+    container_name: 'backend'
+    restart: 'always'
+    depends_on:
+      - 'mongo'
+    ports:
+      - '2022:2022'
