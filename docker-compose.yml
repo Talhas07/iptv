@@ -4,22 +4,31 @@ services:
     container_name: mongodb
     restart: always
     image: mongo:latest
-    ports:
-      - "27017:27017"
-    expose:
-      - 27017
     volumes:
-      - ./mongo:/data/db
+      - ./data:/data/db
+    ports:
+      - 27017:27017
 
-  backend:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    container_name: 'backend'
+  app:
+    build: .
+    container_name: app
+    restart: always
     env_file:
-      - ./.env
-    restart: 'always'
+      - ./.env.docker
+    ports:
+      - 2022:2022
     depends_on:
       - mongo
-    ports:
-      - '2022:2022'
+
+#  backend:
+#    build:
+#      context: .
+#      dockerfile: ./Dockerfile
+#    container_name: 'backend'
+#    env_file:
+#      - ./.env
+#    restart: 'always'
+#    depends_on:
+#      - mongo
+#    ports:
+#      - '2022:2022'
