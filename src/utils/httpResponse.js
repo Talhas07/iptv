@@ -1,4 +1,3 @@
-//HTTP Responses
 import { ErrorCodesMeta } from "../constants/error-codes.js";
 import { SuccessCodesMeta } from "../constants/success-codes.js";
 export const httpResponse = {
@@ -80,11 +79,9 @@ export const httpResponse = {
 		message = ErrorCodesMeta.UNAUTHORIZED.message
 	) => {
 		res.status(401).json({
-			meta: {
-				status: 401,
-				response: "Unauthorized",
-				message,
-			},
+			status: 401,
+			response: "Unauthorized",
+			message,
 			data,
 		});
 	},

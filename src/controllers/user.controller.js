@@ -1,7 +1,7 @@
-import { UserService } from "../../services/index.js";
-import { httpResponse } from "../../utils/index.js";
+import { UserService } from "../services/index.js";
+import { httpResponse } from "../utils/index.js";
 
-const controller = {
+export const UserController = {
 	getAll: async (req, res) => {
 		try {
 			const data = await UserService.getAll();
@@ -20,5 +20,3 @@ const controller = {
 		}
 	},
 };
-
-export default controller;
