@@ -10,7 +10,7 @@
 npm install
 ```
 
-### 2. Run the project
+### 3. Run the project
 
 ```bash
 npm run start
