@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-export const userValidationSchema = {
+export const UserValidationSchema = {
 	add: {
 		body: Joi.object().keys({
 			name: Joi.string().required(),
