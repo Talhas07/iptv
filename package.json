@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-backend",
+  "name": "express-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a boilerplate having basic features of a backend application",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
