@@ -1,5 +1,9 @@
 # Boilerplate Express Backend API:
 
+## Description
+
+This is a boilerplate for backend project using ExpressJS, Joi, Mongoose, JWT, Bcrypt, etc.
+
 ## Run Project
 
 ### 1. Clone the project
