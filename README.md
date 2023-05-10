@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a boilerplate for backend project using ExpressJS, Joi, Mongoose, JWT, Bcrypt, Services, Controllers, Routes, etc.
+This is a boilerplate for backend project using ExpressJS, Joi, Mongoose, JWT, Bcrypt, Services, Controllers, Routes, etc. 
 
 ## Run Project
 
